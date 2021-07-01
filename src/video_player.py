@@ -8,14 +8,17 @@ class VideoPlayer:
 
     def __init__(self):
         self._video_library = VideoLibrary()
-        self._all_vids = VideoLibrary.get_all_videos()
+        self._all_vids = VideoLibrary.get_all_videos() 
+        self._all_vids.sort()
         self._vid_ids = []
+        self._vid_list = []
         for vid in self._all_vids:
             self._vid_ids.append(vid.video_id)
         self._playing = False
         self._current = None
+        self._pause = False
         
-
+    
     def number_of_videos(self):
         num_videos = len(self._all_vids())
         print(f"{num_videos} videos in the library")
@@ -37,29 +40,48 @@ class VideoPlayer:
         if video_id not in self._vid_ids:
             print("Cannot play video: Video does not exist")
         else:
-            playing_vid = self._video_library.get_video(video_id)
-            play_title = playing_vid.title
+            self._playing = True
+            self._current = self._video_library.get_video(video_id)
+            play_title = self._current.title
             print("Playing video: ", f"{play_title}")
 
     def stop_video(self):
         """Stops the current video."""
-        
-        
+        if self._playing == False:
+            print("Cannot stop video: No video is currently playing")
+        else:
+            self._playing = False
+            play_title = self._current.title
+            print("Stopping video: ", f"{play_title}")
+            self._current = None
+            
 
     def play_random_video(self):
         """Plays a random video from the video library."""
-
+        """
+        self._all_vids 
+        delete from list
         
+        play and stop video
+        """
+                
 
     def pause_video(self):
         """Pauses the current video."""
-
         
+        
+        '''
+        check if theres video playing
+        if loop
+        self._pause = True
+        '''
+
 
     def continue_video(self):
         """Resumes playing the current video."""
-
-        
+        '''
+        self._pause = False
+        '''
 
     def show_playing(self):
         """Displays video currently playing."""
