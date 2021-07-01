@@ -64,6 +64,7 @@ class VideoPlayer:
         
         play and stop video
         """
+        
                 
 
     def pause_video(self):
@@ -97,7 +98,9 @@ class VideoPlayer:
         Args:
             playlist_name: The playlist name.
         """
-        print("create_playlist needs implementation")
+        # dictionary, list for videos?
+        print()
+        
 
     def add_to_playlist(self, playlist_name, video_id):
         """Adds a video to a playlist with a given name.
@@ -106,12 +109,14 @@ class VideoPlayer:
             playlist_name: The playlist name.
             video_id: The video_id to be added.
         """
-        print("add_to_playlist needs implementation")
-
+        '''
+        append(getvideo)
+        print()
+        '''
     def show_all_playlists(self):
         """Display all playlists."""
-
-        print("show_all_playlists needs implementation")
+        
+        #print(dict)
 
     def show_playlist(self, playlist_name):
         """Display all videos in a playlist with a given name.
