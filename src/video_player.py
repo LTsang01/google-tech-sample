@@ -86,7 +86,10 @@ class VideoPlayer:
     def show_playing(self):
         """Displays video currently playing."""
 
-        
+        '''
+        vid_title = _current.title
+        print(vid_title)
+        '''
 
     def create_playlist(self, playlist_name):
         """Creates a playlist with a given name.
